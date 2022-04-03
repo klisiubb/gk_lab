@@ -182,14 +182,7 @@
       * (Note that "this" in a function that is called as a member of an object refers to that
       * object.  Here, this will refer to the graphics context.)
       */
-      function drawHexagon(x, y) {
-  this.beginPath();
-  for (var i = 0; i < 6; i++) {
-    this.lineTo(x + r * Math.cos(a * i), y + r * Math.sin(a * i));
-  }
-  this.closePath();
-  tis.stroke();
-}
+
 
      function addGraphicsContextExtras(graphics) {
          graphics.strokeLine = function(x1,y1,x2,y2) {
