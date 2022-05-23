@@ -1,5 +1,7 @@
 import com.jogamp.opengl.GL2;
 
+import static com.jogamp.opengl.GL.GL_TRIANGLE_FAN;
+
 /**
  * Provides static methods for drawing several 3D shapes in an OpenGL
  * drawing context of type GL2.  The shapes come with optional texture coords.
@@ -72,6 +74,7 @@ public class TexturedShapes {
     public static void uvTorus(GL2 gl) {
         uvTorus(gl,0.5,1.0/6,48,72,true);
     }
+
 
 
 
@@ -463,5 +466,9 @@ public class TexturedShapes {
              gl.glEnd();
           }
     }
+    static void uvPyramid(GL2 gl) {
 
+        uvCone(gl, 0.5, 1, 6, 6, 1, true);
+
+    }
 }

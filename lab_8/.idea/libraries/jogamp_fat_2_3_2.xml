@@ -2,6 +2,7 @@
   <library name="jogamp-fat-2.3.2">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../STUDIA/GRAFIKA/lab6 SKONCZONE/jogamp-fat-2.3.2.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/STUDIA/GRAFIKA/lab6 SKONCZONE/jogamp-fat-2.3.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

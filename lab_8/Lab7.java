@@ -117,6 +117,9 @@ public class Lab7 extends JPanel implements GLEventListener {
             case 6:
                 triangularPrism(gl2);
                 break;
+            case 7:
+                TexturedShapes.uvPyramid(gl2);
+                break;
         }
     }
 
@@ -399,6 +402,7 @@ public class Lab7 extends JPanel implements GLEventListener {
         makeMenuItem(objectMenu, "Torus", objectListener, 4);
         makeMenuItem(objectMenu, "Teapot", objectListener, 5);
         makeMenuItem(objectMenu, "Triangular Prism", objectListener, 6);
+        makeMenuItem(objectMenu, "Pyramid", objectListener, 7);
         menuBar.add(objectMenu);
 
         return menuBar;
