@@ -140,23 +140,25 @@ var rotateX = 0, rotateY = 0;   // Overal rotation of model, in radians, set by 
 function addBlade()
 {
     pushMatrix();
-    currentColor = [0.999, 0.999, 0.999];
+    currentColor = [200/255, 1, 252/255];
     mat4.rotateY(modelview, modelview, Math.PI /2);
+    mat4.translate(modelview, modelview, [0, 0, 2.7]);
     mat4.scale(modelview, modelview, [0.7, 0.7, 4.1]);
     cone.render();
     popMatrix();
 
     pushMatrix();
-    currentColor = [0.999, 0.999, 0.999];
-    mat4.translate(modelview, modelview, [-2.4, 0, 0]);
+    currentColor = [200/255, 1, 252/255];
+    mat4.translate(modelview, modelview, [0.3, 0, 0]);
     mat4.rotateY(modelview, modelview, Math.PI /2);
-    mat4.rotateX(modelview, modelview, Math.PI);
+    mat4.rotateX(modelview, modelview, Math.PI );
 	mat4.scale(modelview, modelview,[0.7, 0.7, 0.7]);
     cone.render();
     popMatrix();
 }
 
 var rotateEachFrame = 0.5; 
+let wierzcholki = 6; 
 
 function draw() {
     gl.clearColor(0,0,0,1);
@@ -201,28 +203,16 @@ function draw() {
     mat4.rotate(modelview, modelview, rotateEachFrame, [0, 0, 1]);
     mat4.translate(modelview, modelview, [2.9, -2, 0]);
     
-	pushMatrix();
-    mat4.translate(modelview, modelview, [-5.6, 1.95, 0]);
-    mat4.rotateY(modelview,modelview, Math.PI);
-    addBlade();
-    popMatrix();
-
-    pushMatrix();
-    mat4.translate(modelview, modelview, [-1.55, -0.4, 0]);
-    mat4.rotateZ(modelview,modelview, 0.666 * Math.PI);
-    mat4.rotateY(modelview,modelview, Math.PI);
-    addBlade();
-    popMatrix();
+    for(let i =0; i<wierzcholki;i++){
+       
+        pushMatrix();
+        mat4.translate(modelview, modelview, [-3, 1.95, 0]);
+        mat4.rotateZ(modelview,modelview, i*(360/wierzcholki)*(Math.PI/180));
+        mat4.rotateY(modelview,modelview, Math.PI);
+        addBlade();
+        popMatrix();
     
-    pushMatrix();
-    mat4.translate(modelview, modelview, [-1.55, 4.25, 0]);
-    mat4.rotateZ(modelview,modelview, 1.333 * Math.PI);
-    mat4.rotateY(modelview,modelview, Math.PI);
-    addBlade();
-    popMatrix();
-    
-    
-
+    }
 
 } // end draw();
 
